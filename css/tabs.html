@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab</title>
+    <style>
+      .tab-box {
+        width: 204px;
+        height: 40px;
+        margin: 30px;
+        box-shadow: 3px 3px 6px #c8d0e7, -2px -2px 5px #ffffff;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      .tab-select {
+        position: absolute;
+        height: 34px;
+        width: 62px;
+        margin-left: 3px;
+        border-radius: 8px;
+        box-shadow: inset 2px 2px 5px #c8d0e7, inset -2px -2px 5px #ffffff;
+      }
+
+      #tab-1:checked ~ .tab-select {
+        transform: translateX(0);
+        transition: transform 0.3s;
+      }
+      #tab-2:checked ~ .tab-select {
+        transform: translateX(68px);
+        transition: transform 0.3s;
+      }
+      #tab-3:checked ~ .tab-select {
+        transform: translateX(136px);
+        transition: transform 0.3s;
+      }
+
+      input {
+        display: none;
+      }
+
+      .tab-label {
+        width: 68px;
+        height: 36px;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #9baacf;
+        transition: all 0.5s ease;
+      }
+
+      input:checked + label {
+        color: #6d5dfc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab-box">
+      <input type="radio" name="radio" id="tab-1" checked />
+      <label for="tab-1" class="tab-label">Tab 1</label>
+
+      <input type="radio" name="radio" id="tab-2" />
+      <label for="tab-2" class="tab-label">Tab 2</label>
+
+      <input type="radio" name="radio" id="tab-3" />
+      <label for="tab-3" class="tab-label">Tab 3</label>
+
+      <div class="tab-select"></div>
+    </div>
+  </body>
+</html>
